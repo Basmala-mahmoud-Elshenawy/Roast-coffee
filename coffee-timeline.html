@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>عملية القهوة</title>
+<style>
+  :root{
+    --line: #e7ded4;
+    --dot-ring: #a97e5a;
+    --icon-bg: #f3e6dc;
+    --icon-color: #a97e5a;
+    --step-label: #b9866a;
+    --heading: #2b2b33;
+    --body-text: #6b6f76;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    padding: 60px 20px;
+  }
+  .timeline{
+    position:relative;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:2px;
+    background:var(--line);
+    transform: translateX(-50%);
+  }
+  .step{
+    position:relative;
+    display:flex;
+    align-items:flex-start;
+    margin-bottom: 140px;
+  }
+  .step:last-child{ margin-bottom:0; }
+
+  .dot{
+    position:absolute;
+    left:50%;
+    top:8px;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#fff;
+    border: 3px solid var(--dot-ring);
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .content{
+    width:50%;
+  }
+  .content.left{
+    padding-right: 60px;
+    text-align:right;
+  }
+  .content.right{
+    margin-left:50%;
+    padding-left: 60px;
+    text-align:left;
+  }
+
+  .icon-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom: 20px;
+  }
+  .content.left .icon-row{ justify-content:flex-end; }
+  .content.right .icon-row{ justify-content:flex-start; }
+
+  .icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:var(--icon-bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--icon-color);
+    font-size:20px;
+  }
+  .step-label{
+    font-style: italic;
+    color: var(--step-label);
+    font-family: Georgia, serif;
+    font-size: 17px;
+  }
+  h2{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 34px;
+    color: var(--heading);
+    margin: 0 0 18px 0;
+  }
+  p{
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--body-text);
+    margin:0;
+    max-width: 420px;
+  }
+  .content.left p{ margin-inline-start:auto; }
+
+  @media (max-width: 720px){
+    .timeline::before{ left:20px; }
+    .dot{ left:20px; }
+    .content.left, .content.right{
+      width:100%;
+      margin-left:0;
+      padding:0 0 0 50px;
+      text-align:left;
+    }
+    .content.left .icon-row,
+    .content.right .icon-row{ justify-content:flex-start; }
+    .content.left p{ margin-inline-start:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="timeline">
+
+  <div class="step">
+    <div class="dot"></div>
+    <div class="content left">
+      <div class="icon-row">
+        <span class="step-label">Step 1</span>
+        <span class="icon">🌍</span>
+      </div>
+      <h2>Sourcing</h2>
+      <p>We partner directly with farmers across the coffee belt, ensuring fair prices and sustainable practices.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="dot"></div>
+    <div class="content right">
+      <div class="icon-row">
+        <span class="icon">🍃</span>
+        <span class="step-label">Step 2</span>
+      </div>
+      <h2>Roasting</h2>
+      <p>Small-batch roasting in our Portland facility, where we develop each bean to its full potential.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="dot"></div>
+    <div class="content left">
+      <div class="icon-row">
+        <span class="step-label">Step 3</span>
+        <span class="icon">🧪</span>
+      </div>
+      <h2>Cupping</h2>
+      <p>Rigorous quality control through daily cupping sessions to ensure consistency and excellence.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
